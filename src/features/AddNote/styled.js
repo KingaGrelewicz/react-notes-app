@@ -34,7 +34,9 @@ export const AddNoteFooter = styled.div`
   align-items: center;
 `;
 
-export const AddNoteRemaining = styled.small``;
+export const AddNoteRemaining = styled.small`
+  word-wrap: break-word;
+`;
 
 export const AddNoteButton = styled.button`
   background-color: ${({ theme }) => theme.color.buttonColor};

@@ -13,8 +13,12 @@ const AddNote = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
   const [noteTitle, setNoteTitle] = useState("");
 
+  const characterLimit = 200;
+
   const handleChange = (event) => {
-    setNoteText(event.target.value);
+    if (characterLimit - event.target.value.length >= 0) {
+      setNoteText(event.target.value);
+    }
   };
 
   const handleTitleChange = (event) => {
@@ -45,7 +49,9 @@ const AddNote = ({ handleAddNote }) => {
           onChange={handleChange}
         ></AddNoteText>
         <AddNoteFooter>
-          <AddNoteRemaining>200 Remaining</AddNoteRemaining>
+          <AddNoteRemaining>
+            {characterLimit - noteText.length} Remaining
+          </AddNoteRemaining>
           <AddNoteButton onClick={handleSaveClick}>Save</AddNoteButton>
         </AddNoteFooter>
       </AddNoteContainer>
