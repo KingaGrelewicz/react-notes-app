@@ -12,9 +12,16 @@ export const NoteContainer = styled.div`
 
 export const NoteParagraph = styled.p`
   padding: 10px 0;
-  display: flex;
+  white-space: pre-wrap;
 `;
+
 export const NoteCreationDate = styled.small``;
+
+export const NoteButton = styled.button`
+  background: transparent;
+  border: black;
+  cursor: pointer;
+`;
 
 export const NoteFooter = styled.div`
   display: flex;

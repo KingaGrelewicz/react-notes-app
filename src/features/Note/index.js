@@ -1,6 +1,7 @@
 import { MdDeleteForever } from "react-icons/md";
 import {
-    NoteContainer,
+  NoteButton,
+  NoteContainer,
   NoteCreationDate,
   NoteFooter,
   NoteParagraph,
@@ -8,15 +9,17 @@ import {
 } from "./styled";
 import { NoteTile } from "../NoteTile";
 
-const Note = ({ id, title, text, date }) => {
+const Note = ({ id, title, text, date, handleDeleteNote }) => {
   return (
     <NoteTile $variant="note">
-      <NoteTitle key={id}>{title}</NoteTitle>
+      <NoteTitle id={id}>{title}</NoteTitle>
       <NoteContainer>
         <NoteParagraph>{text}</NoteParagraph>
         <NoteFooter>
           <NoteCreationDate>{date}</NoteCreationDate>
-          <MdDeleteForever size="25px" />
+          <NoteButton onClick={() => handleDeleteNote(id)}>
+            <MdDeleteForever size="25px" />
+          </NoteButton>
         </NoteFooter>
       </NoteContainer>
     </NoteTile>
