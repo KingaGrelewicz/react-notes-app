@@ -5,6 +5,7 @@ import Container from "./common/Container";
 import NotesList from "./features/NotesList";
 import { Globalstyle } from "./GlobalStyle";
 import { theme } from "./theme";
+import Search from "./features/Search";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -41,11 +42,21 @@ const App = () => {
     setNotes(newNotes);
   };
 
+  const deleteNote = (id) => {
+    const newNote = notes.filter((note) => note.id !== id);
+    setNotes(newNote);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <Globalstyle />
-        <NotesList notes={notes} handleAddNote={addNote} />
+        <Search />
+        <NotesList
+          notes={notes}
+          handleAddNote={addNote}
+          handleDeleteNote={deleteNote}
+        />
       </Container>
     </ThemeProvider>
   );
