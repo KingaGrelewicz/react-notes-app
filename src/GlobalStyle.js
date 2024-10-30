@@ -10,7 +10,6 @@ export const Globalstyle = createGlobalStyle`
     }
   body {
     font-family: "Inter", sans-serif;
-    /* transition: background 0.3s; */
     background-color: white;
   };
 `;
