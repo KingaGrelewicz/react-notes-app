@@ -13,4 +13,5 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
   background: transparent;
   border: none;
+  outline: none;
 `;
