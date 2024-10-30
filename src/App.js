@@ -6,6 +6,7 @@ import NotesList from "./features/NotesList";
 import { Globalstyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import Search from "./features/Search";
+import Header from "./features/Header";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -29,6 +30,8 @@ const App = () => {
     },
   ]);
 
+  const [searchNote, setSearchNote] = useState("");
+
   const addNote = (text, title) => {
     const date = new Date();
     const newNote = {
@@ -51,9 +54,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Container>
         <Globalstyle />
-        <Search />
+        <Header />
+        <Search handleSearchNote={setSearchNote} />
         <NotesList
-          notes={notes}
+          notes={notes.filter((note) =>
+            note.text.toLowerCase().includes(searchNote)
+          )}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
         />
