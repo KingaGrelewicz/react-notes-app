@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { ThemeProvider } from "styled-components";
 import Container from "./common/Container";
@@ -9,28 +9,37 @@ import Search from "./features/Search";
 import Header from "./features/Header";
 
 const App = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      title: "Note Title",
-      text: "This is your first note",
-      date: "12.10.2024",
-    },
-    {
-      id: nanoid(),
-      title: "Note Title",
-      text: "This is your second note",
-      date: "12.10.2024",
-    },
-    {
-      id: nanoid(),
-      title: "Note Title",
-      text: "This is your trird note",
-      date: "12.10.2024",
-    },
-  ]);
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("notes-app-data"));
+    return (
+      savedNotes || [
+        {
+          id: nanoid(),
+          title: "Note Title",
+          text: "This is your first note",
+          date: "12.10.2024",
+        },
+        {
+          id: nanoid(),
+          title: "Note Title",
+          text: "This is your second note",
+          date: "12.10.2024",
+        },
+        {
+          id: nanoid(),
+          title: "Note Title",
+          text: "This is your third note",
+          date: "12.10.2024",
+        },
+      ]
+    );
+  });
 
   const [searchNote, setSearchNote] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("notes-app-data", JSON.stringify(notes));
+  }, [notes]);
 
   const addNote = (text, title) => {
     const date = new Date();
@@ -58,7 +67,7 @@ const App = () => {
         <Search handleSearchNote={setSearchNote} />
         <NotesList
           notes={notes.filter((note) =>
-            note.text.toLowerCase().includes(searchNote)
+            note.text.toLowerCase().includes(searchNote.toLowerCase())
           )}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
