@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/KingaGrelewicz/react-notes-app.git/static/js/main.9bd41aa3.js",
-    "static/js/453.0cec2fca.chunk.js": "/KingaGrelewicz/react-notes-app.git/static/js/453.0cec2fca.chunk.js",
-    "index.html": "/KingaGrelewicz/react-notes-app.git/index.html",
-    "main.9bd41aa3.js.map": "/KingaGrelewicz/react-notes-app.git/static/js/main.9bd41aa3.js.map",
-    "453.0cec2fca.chunk.js.map": "/KingaGrelewicz/react-notes-app.git/static/js/453.0cec2fca.chunk.js.map"
+    "main.js": "/react-notes-app/static/js/main.9623bc65.js",
+    "static/js/453.0cec2fca.chunk.js": "/react-notes-app/static/js/453.0cec2fca.chunk.js",
+    "index.html": "/react-notes-app/index.html",
+    "main.9623bc65.js.map": "/react-notes-app/static/js/main.9623bc65.js.map",
+    "453.0cec2fca.chunk.js.map": "/react-notes-app/static/js/453.0cec2fca.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.9bd41aa3.js"
+    "static/js/main.9623bc65.js"
   ]
 }
