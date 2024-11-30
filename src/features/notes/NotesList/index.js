@@ -1,8 +1,16 @@
-import AddNote from "../AddNote";
+import { useDispatch } from "react-redux";
 import Note from "../Note";
+import AddNoteForm from "../AddNoteForm";
 import { NotesListContainer } from "./styled";
+import { deleteNote } from "../noteSlice";
 
-const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
+const NotesList = ({ notes }) => {
+  const dispatch = useDispatch();
+
+  const handleDeleteNote = (id) => {
+    dispatch(deleteNote(id));
+  };
+
   return (
     <NotesListContainer>
       {notes.map((note) => (
@@ -15,7 +23,7 @@ const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
           handleDeleteNote={handleDeleteNote}
         />
       ))}
-      <AddNote handleAddNote={handleAddNote} />
+      <AddNoteForm />
     </NotesListContainer>
   );
 };
