@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NoteTitle = styled.h2`
   margin: 10px 0;
+  font-size: 24px;
 `;
 
 export const NoteContainer = styled.div`
@@ -13,6 +14,7 @@ export const NoteContainer = styled.div`
 export const NoteParagraph = styled.p`
   padding: 10px 0;
   white-space: pre-wrap;
+  word-break: break-word;
 `;
 
 export const NoteCreationDate = styled.small``;
