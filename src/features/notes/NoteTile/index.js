@@ -13,6 +13,7 @@ export const NoteTile = styled.section`
     $variant === "note" &&
     css`
       background-color: ${({ theme }) => theme.color.primaryBackground};
+      word-wrap: break-word;
     `}
 
   ${({ $variant }) =>
