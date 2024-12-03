@@ -1,15 +1,21 @@
-import { call, select, takeEvery } from "redux-saga/effects";
-import { addNote, deleteNote, selectNotes } from "./noteSlice";
-import { saveNotesInLocalStorage } from "./notesLocalStorage";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
+import {
+  fetchNotesError,
+  fetchNotesStart,
+  fetchNotesSuccess,
+} from "./noteSlice";
+import { getNotesFromLocalStorage } from "./notesLocalStorage";
 
-function* saveNotesInLocalStorageHandler() {
-  const notes = yield select(selectNotes);
-  yield call(saveNotesInLocalStorage, notes);
+function* fetchNotesHandler() {
+  try {
+    yield delay(1000);
+    const notes = yield call(getNotesFromLocalStorage);
+    yield put(fetchNotesSuccess(notes));
+  } catch (error) {
+    yield put(fetchNotesError());
+  }
 }
 
 export function* watchFetchNotes() {
-  yield takeEvery(
-    [addNote.type, deleteNote.type],
-    saveNotesInLocalStorageHandler
-  );
+  yield takeLatest(fetchNotesStart.type, fetchNotesHandler);
 }
