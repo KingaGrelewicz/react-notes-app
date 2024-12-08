@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
-import { SearchContainer, SearchInput } from "./styled";
-import { IoMdSearch } from "react-icons/io";
+import { SearchContainer, SearchIcon, SearchInput } from "./styled";
+
 import NotesList from "../NotesList";
 import { selectNotes } from "../noteSlice";
 
@@ -28,12 +28,12 @@ const Search = () => {
   return (
     <div>
       <SearchContainer>
-        <IoMdSearch size="24px" />
+        <SearchIcon size="24px" />
         <SearchInput
           onChange={handleSearchChange}
           value={searchQuery}
           type="text"
-          placeholder="Wpisz, aby wyszukać..."
+          placeholder="type to search..."
         />
       </SearchContainer>
       <NotesList notes={filteredNotes} />

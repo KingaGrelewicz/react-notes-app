@@ -7,12 +7,12 @@ export const NoteTile = styled.section`
   grid-template-rows: auto 1fr;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 3px 3px 10px 0px rgba(146, 148, 158, 1);
+  box-shadow: 3px 3px 10px 0px rgba(146, 148, 158, 0.5);
 
   ${({ $variant }) =>
     $variant === "note" &&
     css`
-      background-color: ${({ theme }) => theme.color.primaryBackground};
+      background-color: ${({ theme }) => theme.color.noteBackground};
       word-wrap: break-word;
     `}
 
