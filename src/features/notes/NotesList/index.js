@@ -1,9 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import Note from "../Note";
 import AddNoteForm from "../AddNoteForm";
-import { NotesListContainer } from "./styled";
+import {
+  ErrorWrapper,
+  LoadingSpinner,
+  LoadingText,
+  LoadingWrapper,
+  NotesListContainer,
+} from "./styled";
 import { deleteNote, fetchNotesStart, selectNotesStatus } from "../noteSlice";
-import { useEffect } from "react";
+import loading_spinner from "../../../image/loading_spinner.png";
 
 const NotesList = ({ notes }) => {
   const status = useSelector(selectNotesStatus);
@@ -20,14 +27,23 @@ const NotesList = ({ notes }) => {
   }, [dispatch, status]);
 
   if (status === "loading") {
-    return <p>uno momento</p>;
+    return (
+      <LoadingWrapper>
+        <LoadingText>Wait please... is loading...</LoadingText>
+        <LoadingSpinner src={loading_spinner} />
+      </LoadingWrapper>
+    );
   }
 
   if (status === "error") {
-    return <p>ups!</p>;
+    return (
+      <ErrorWrapper>
+        There was something happened, try to refresh your browser 🫣
+      </ErrorWrapper>
+    );
   }
 
-  if (status === "success" && notes?.length) {
+  if (status === "success") {
     return (
       <NotesListContainer>
         <AddNoteForm />
