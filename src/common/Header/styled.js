@@ -10,12 +10,5 @@ export const HeaderTitle = styled.h1`
   font-size: 64px;
   font-weight: 700;
   margin: 0;
-`;
-
-export const HeaderButton = styled.button`
-  outline: none;
-  border: none;
-  background: transparent;
-  padding: 20px;
-  cursor: pointer;
+  color: ${({ theme }) => theme.color.primaryTextColor};
 `;

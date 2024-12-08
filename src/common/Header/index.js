@@ -1,13 +1,11 @@
-import { MdLightMode } from "react-icons/md";
-import { HeaderButton, HeaderContainer, HeaderTitle } from "./styled";
+import Theme from "../Theme";
+import { HeaderContainer, HeaderTitle } from "./styled";
 
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderTitle>Notes</HeaderTitle>
-      <HeaderButton>
-        <MdLightMode size="32px" />
-      </HeaderButton>
+      <Theme />
     </HeaderContainer>
   );
 };
