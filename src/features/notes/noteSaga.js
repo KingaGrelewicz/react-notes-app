@@ -28,4 +28,8 @@ function* saveNotesInLocalStorageHandler() {
 
 export function* watchFetchNotes() {
   yield takeLatest(fetchNotesStart.type, fetchNotesHandler);
-  yield takeLatest([addNote.type, deleteNote.type], saveNotesInLocalStorageHandler)}
+  yield takeLatest(
+    [addNote.type, deleteNote.type],
+    saveNotesInLocalStorageHandler
+  );
+}
