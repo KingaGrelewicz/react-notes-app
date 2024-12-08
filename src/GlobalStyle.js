@@ -10,6 +10,8 @@ export const Globalstyle = createGlobalStyle`
     }
   body {
     font-family: "Inter", sans-serif;
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.primaryBackground};
+    color: ${({ theme }) => theme.color.primaryTextColor};
+    transition: background 0.3s;
   };
 `;
