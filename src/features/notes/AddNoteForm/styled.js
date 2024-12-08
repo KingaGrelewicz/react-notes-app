@@ -10,6 +10,10 @@ export const AddNoteTitle = styled.input`
   background-color: ${({ theme }) => theme.color.addNoteBackground};
   color: ${({ theme }) => theme.color.primaryTextColor};
   margin: 10px 0;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.primaryTextColor};
+  }
 `;
 
 export const AddNoteContainer = styled.div`
@@ -26,6 +30,10 @@ export const AddNoteText = styled.textarea`
   resize: none;
   background-color: ${({ theme }) => theme.color.addNoteBackground};
   color: ${({ theme }) => theme.color.primaryTextColor};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.primaryTextColor};
+  }
 `;
 
 export const AddNoteFooter = styled.div`
@@ -40,7 +48,7 @@ export const AddNoteRemaining = styled.small`
 
 export const AddNoteButton = styled.button`
   background-color: ${({ theme }) => theme.color.buttonColor};
-  color: ${({ theme }) => theme.color.primaryTextColor};
+  color: ${({ theme }) => theme.color.buttonText};
   border: none;
   border-radius: 10px;
   padding: 5px 10px;

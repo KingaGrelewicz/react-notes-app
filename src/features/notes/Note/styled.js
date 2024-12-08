@@ -23,6 +23,7 @@ export const NoteButton = styled.button`
   background: transparent;
   border: black;
   cursor: pointer;
+  color: ${({ theme }) => theme.color.iconsColor};
 `;
 
 export const NoteFooter = styled.div`
