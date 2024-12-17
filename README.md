@@ -1,10 +1,27 @@
 # React Notes App
 
-Work in progress...
+Notes Site is intuitive application for keeping notes. With its user-friendly interface, it allows for easy creation, storage, and management of notes.
 
-## Getting Started with Create React App
+You can check the demo here [Link](https://kingagrelewicz.github.io/react-notes-app/)
+![notes gif](public/notes.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Technologies
+
+During creating the website I was using Visual Studio Code,
+
+- JavaScript
+- Create React App
+- Redux
+- Redux toolkit
+- Redux Saga
+- Styled Components
+- Hooks
+- ES6+ Features
+- HTML
+
+The website was created to response correctly on desktop, tablets, and mobile devices thanks to using media queries. I used fonts available on Google Fonts, Sharing debugger and flexbox, grid.
 
 ## Available Scripts
 
