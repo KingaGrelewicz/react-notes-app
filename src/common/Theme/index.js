@@ -7,7 +7,7 @@ const Theme = () => {
 
   return (
     <ThemeButton onClick={() => dispatch(switchTheme())}>
-      <ThemeIcon size="32px" />
+      <ThemeIcon />
     </ThemeButton>
   );
 };
