@@ -23,3 +23,12 @@ export const darkTheme = {
     iconsColor: "#FFFFFF",
   },
 };
+
+export const mediaQuery = {
+  breakpoints: {
+    mobile: 366,
+    mobileMax: 768,
+    tabletVertical: 1095,
+    tabletHorizontal: 1280,
+  },
+};
