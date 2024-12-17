@@ -1,10 +1,15 @@
 import styled, { keyframes } from "styled-components";
+import { mediaQuery } from "../../../theme";
 
 export const NotesListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 16px;
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVertical}px) {
+    justify-content: center;
+  }
 `;
 
 export const LoadingWrapper = styled.div`

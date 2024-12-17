@@ -1,7 +1,9 @@
 import { darken } from "polished";
 import styled from "styled-components";
+import { mediaQuery } from "../../../theme";
 
 export const AddNoteTitle = styled.input`
+  font-size: 22px;
   padding: 5px;
   border: none;
   outline: none;
@@ -14,6 +16,10 @@ export const AddNoteTitle = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.color.primaryTextColor};
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 18px;
+  }
 `;
 
 export const AddNoteContainer = styled.div`
@@ -23,6 +29,7 @@ export const AddNoteContainer = styled.div`
 `;
 
 export const AddNoteText = styled.textarea`
+  font-size: 20px;
   padding: 5px;
   border: none;
   outline: none;
@@ -33,6 +40,10 @@ export const AddNoteText = styled.textarea`
 
   &::placeholder {
     color: ${({ theme }) => theme.color.primaryTextColor};
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 16px;
   }
 `;
 
